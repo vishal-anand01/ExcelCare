@@ -15,20 +15,27 @@ import { ShoeCleaningPage } from "../pages/ShoeCleaningPage";
 import { StoreLocatorPage } from "../pages/StoreLocatorPage";
 
 export function AppRouter() {
-  return <BrowserRouter><Routes>
-    <Route path="/" element={<HomePage />} />
-    <Route path="/about-us" element={<AboutUsPage />} />
-    <Route path="/services" element={<ServicesPage />} />
-    <Route path="/laundry-services" element={<LaundryServicesPage />} />
-    <Route path="/dry-cleaning" element={<DryCleaningPage />} />
-    <Route path="/ironing" element={<IroningPage />} />
-    <Route path="/shoe-cleaning" element={<ShoeCleaningPage />} />
-    <Route path="/curtain-cleaning" element={<CurtainCleaningPage />} />
-    <Route path="/carpet-cleaning" element={<CarpetCleaningPage />} />
-    <Route path="/contact-us" element={<ContactUsPage />} />
-    <Route path="/store-locator" element={<StoreLocatorPage />} />
-    <Route path="/best-laundry-franchise-in-india" element={<FranchisePage />} />
-    <Route path="/blog" element={<BlogPage />} />
-    <Route path="*" element={<NotFoundPage />} />
-  </Routes></BrowserRouter>;
+  return (
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/laundry-services" element={<LaundryServicesPage />} />
+        <Route path="/dry-cleaning" element={<DryCleaningPage />} />
+        <Route path="/ironing" element={<IroningPage />} />
+        <Route path="/shoe-cleaning" element={<ShoeCleaningPage />} />
+        <Route path="/curtain-cleaning" element={<CurtainCleaningPage />} />
+        <Route path="/carpet-cleaning" element={<CarpetCleaningPage />} />
+        <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/store-locator" element={<StoreLocatorPage />} />
+        <Route
+          path="/best-laundry-franchise-in-india"
+          element={<FranchisePage />}
+        />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
