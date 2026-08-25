@@ -16,7 +16,7 @@ import { StoreLocatorPage } from "../pages/StoreLocatorPage";
 
 export function AppRouter() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+   <BrowserRouter basename={import.meta.env.PROD ? "/ExcelCare" : "/"}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
