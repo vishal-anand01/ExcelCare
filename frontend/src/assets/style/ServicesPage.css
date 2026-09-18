@@ -1,0 +1,113 @@
+/* ServicesPage-specific styles live here. Shared base styles remain in site.css. */
+@import "./site.css";
+
+.services-faq {
+  background: #fff9ef;
+  padding: 96px 24px 104px;
+  color: #06345d;
+}
+
+.services-faq__container {
+  max-width: 1352px;
+  margin: 0 auto;
+}
+
+.services-faq__header {
+  max-width: 760px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.services-faq__badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ffd36b;
+  border-radius: 999px;
+  color: #aa7000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  padding: 9px 19px;
+}
+
+.services-faq__header h2 {
+  margin: 20px 0 6px;
+  color: #06345d;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+}
+
+.services-faq__header p {
+  margin: 0;
+  color: #365677;
+  font-size: 16px;
+}
+
+.services-faq__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.services-faq__item {
+  overflow: hidden;
+  border: 1px solid #dce4eb;
+  border-radius: 15px;
+  background: #fff;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+
+.services-faq__item.is-open {
+  border-color: #ffd36b;
+  box-shadow: 0 8px 22px rgba(6, 52, 93, .07);
+}
+
+.services-faq__item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 68px;
+  gap: 18px;
+  border: 0;
+  padding: 18px 24px;
+  background: transparent;
+  color: #06345d;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.services-faq__item button b {
+  display: grid;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffc52e;
+  color: #06345d;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.services-faq__answer {
+  padding: 0 24px 20px;
+  color: #47627d;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.services-faq__answer p { margin: 0; }
+
+@media (max-width: 760px) {
+  .services-faq { padding: 72px 16px 80px; }
+  .services-faq__header { margin-bottom: 32px; }
+  .services-faq__grid { grid-template-columns: 1fr; gap: 12px; }
+  .services-faq__item button { min-height: 64px; padding: 16px 18px; font-size: 15px; }
+  .services-faq__answer { padding: 0 18px 18px; }
+}

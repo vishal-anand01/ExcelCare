@@ -1,0 +1,949 @@
+.laundry-page {
+  overflow: hidden;
+  color: #073b64;
+}
+.laundry-hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem 2rem 0;
+  border-bottom: 8px solid #08335d;
+  background-image: url("../images/laundry-services/hero-bg.webp");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.laundry-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(460px, 0.9fr);
+  align-items: center;
+  width: min(1480px, 100%);
+  min-height: 432px;
+  margin: 0 auto;
+  padding: 54px 0 68px;
+}
+.laundry-hero__copy {
+  max-width: 765px;
+}
+.laundry-hero__eyebrow {
+  margin: 0 0 8px;
+  color: #b67800;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+.laundry-hero h1 {
+  max-width: 780px;
+  margin: 0;
+  color: #08335d;
+  display: inline;
+  font-family: Poppins, sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-align: start;
+}
+.laundry-hero__highlight {
+  color: #ffc52d;
+  white-space: nowrap;
+}
+.laundry-hero .laundry-hero__highlight:after {
+  bottom: -8px;
+  height: 8px;
+  border-bottom: 4px solid #08335d;
+  transform: scaleX(0) rotate(-2deg);
+  transform-origin: left center;
+}
+.laundry-hero .laundry-hero__highlight.is-drawing:after {
+  animation: hero-underline-draw 1.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.laundry-hero__description {
+  margin: 30px 0 18px;
+  color: #234c70;
+  font-size: 15px;
+}
+.laundry-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.laundry-hero__primary,
+.laundry-hero__secondary {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 12px 31px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.laundry-hero__primary {
+  gap: 15px;
+  background: #073b64;
+  color: #fff;
+}
+.laundry-hero__primary span {
+  font-size: 25px;
+  line-height: 0;
+}
+.laundry-hero__secondary {
+  background: #ffc82f;
+  color: #073b64;
+}
+.laundry-hero__visual {
+  position: relative;
+  align-self: stretch;
+  min-height: 330px;
+}
+.laundry-hero__visual-circle {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  width: min(31vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fffdf8;
+  box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.3);
+}
+.laundry-hero__visual img {
+  position: absolute;
+  z-index: 1;
+  bottom: -68px;
+  right: -8%;
+  width: 70%;
+  max-width: 780px;
+  height: auto;
+  border-radius: 20px;
+}
+@keyframes floatAnimation {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -14px; }
+}
+.laundry-hero__delivery-note {
+  position: absolute;
+  z-index: 2;
+  right: -10px;
+  bottom: 15px;
+  padding: 13px 18px;
+  border-radius: 12px;
+  background: #073b64;
+  box-shadow: 0 10px 20px rgba(6, 49, 83, 0.17);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.laundry-hero__dots {
+  position: absolute;
+  z-index: 1;
+  width: 76px;
+  height: 76px;
+  background-image: radial-gradient(#d9d3c8 2px, transparent 2.6px);
+  background-size: 16px 16px;
+  opacity: 0.75;
+}
+.laundry-hero__dots--left {
+  left: 3.2%;
+  top: 45%;
+  transform: rotate(-20deg);
+}
+.laundry-hero__dots--right {
+  right: 3%;
+  top: 4%;
+}
+.pickup-section {
+  position: relative;
+  z-index: 2;
+  margin-top: -26px;
+  padding: 0 24px 0px;
+  background: transparent;
+}
+.pickup-section__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.44fr);
+  max-width: 1480px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(6, 49, 83, 0.14);
+}
+.pickup-form {
+  padding: 28px 30px;
+}
+.pickup-form h2 {
+  margin: 0 0 21px;
+  font-size: 30px;
+  letter-spacing: -0.035em;
+}
+.pickup-form__fields {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.pickup-form input[placeholder] {
+  width: 100%;
+  min-width: 0;
+  height: 43px;
+  border: 1px solid #c8c8c8;
+  border-radius: 24px;
+  padding: 0 16px;
+  color: #073b64;
+  font: inherit;
+  font-size: 13px;
+  outline-color: #ffc52d;
+}
+.pickup-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 13px;
+}
+.pickup-form__services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+.pickup-form__services label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #596879;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.pickup-form__services input {
+  width: 13px;
+  height: 13px;
+  accent-color: #ffc52d;
+}
+.pickup-form button {
+  min-width: 244px;
+  height: 40px;
+  border: 0;
+  border-radius: 22px;
+  background: #ffc52d;
+  color: #073b64;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+}
+.pickup-form__success {
+  margin: 13px 0 0;
+  color: #198754;
+  font-size: 13px;
+}
+.pickup-offer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 32px;
+  background: #16065d;
+  color: #fff;
+}
+.pickup-offer__icon {
+  display: grid;
+  flex: 0 0 73px;
+  width: 73px;
+  height: 73px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffc52d;
+  color: #073b64;
+  font-size: 36px;
+  font-weight: 700;
+}
+.pickup-offer h2 {
+  margin: 0 0 5px;
+  color: #fff;
+  font-size: 21px;
+  letter-spacing: -0.025em;
+}
+.pickup-offer p {
+  max-width: 235px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.laundry-trust-section {
+  background: #fffcf1;
+  border-bottom: 10px solid #fc3;
+  padding: 4.5rem 1.5rem;
+}
+.laundry-trust-section__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.98fr) minmax(420px, 0.92fr);
+  align-items: center;
+  gap: clamp(42px, 5.2vw, 84px);
+  width: min(1480px, 100%);
+  margin: 0 auto;
+}
+.laundry-trust-section__copy {
+  max-width: 710px;
+}
+.laundry-trust-section h2 {
+  margin-top: 0.75em;
+  margin-bottom: 2rem;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3em;
+  text-align: left;
+}
+.laundry-trust-section__highlight {
+  color: #ffc52d;
+  white-space: nowrap;
+}
+.laundry-trust-section .laundry-trust-section__highlight:after {
+  bottom: -8px;
+  height: 8px;
+  border-bottom: 4px solid #073b64;
+  transform: scaleX(0) rotate(-2deg);
+  transform-origin: left center;
+  animation: none;
+}
+.laundry-trust-section .laundry-trust-section__highlight.is-drawing:after {
+  animation: hero-underline-draw 1.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.laundry-trust-section p,
+.laundry-trust-section li {
+  color: #04192d;
+  font-size: 15px;
+  line-height: 1.75;
+}
+.laundry-trust-section p {
+  margin: 0 0 19px;
+}
+.laundry-trust-section ul {
+  display: grid;
+  gap: 11px;
+  margin: 21px 0 20px;
+  padding-left: 20px;
+}
+.laundry-trust-section li {
+  padding-left: 4px;
+}
+.laundry-trust-section strong {
+  color: #073b64;
+  font-weight: 800;
+}
+.laundry-trust-section__button {
+  display: inline-flex;
+  min-width: 190px;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 21px;
+  border-radius: 999px;
+  background: #073b64;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+}
+.laundry-trust-section__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.laundry-trust-section__visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+}
+.laundry-types-section {
+  padding: 2.8rem 1.5rem 4rem;
+  border-top: 2px solid #f2b51e;
+  border-bottom: 10px solid #073b64;
+  background: #fff;
+}
+.laundry-types-section__inner {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+}
+.laundry-types-section h2 {
+  margin-top: 0.75em;
+  margin-bottom: 4rem;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-align: center;
+}
+.laundry-types-section__highlight {
+  color: #ffc52d;
+  white-space: nowrap;
+}
+.laundry-types-section .laundry-types-section__highlight:after {
+  bottom: -12px;
+  height: 8px;
+  border-bottom: 4px solid #073b64;
+  transform: scaleX(0) rotate(-2deg);
+  transform-origin: left center;
+  animation: none;
+}
+.laundry-types-section .laundry-types-section__highlight.is-drawing:after {
+  animation: hero-underline-draw 1.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.laundry-types-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.laundry-types-section--carpet-cleaning h2 {
+  margin-top: .75em;
+  margin-bottom: 10rem;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-align: center;
+}
+.laundry-types-section--curtain-cleaning h2 {
+  margin-top: .75em;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-align: center;
+}
+.laundry-type-card {
+  position: relative;
+  padding-top: 112px;
+  text-align: center;
+}
+.laundry-type-card img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translateX(-50%);
+}
+.laundry-type-card__body {
+  min-height: 278px;
+  padding: 123px 34px 38px;
+  border-radius: 12px;
+  background: #fff4e9;
+  box-shadow: 0 16px 35px rgba(8, 51, 93, 0.08);
+}
+.laundry-type-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+.laundry-type-card p {
+  max-width: 390px;
+  margin: 0 auto;
+  color: #4d4d4d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.laundry-page .why-choose-us__title {
+  margin-top: 0.75em;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+.expert-laundry-section {
+  padding: 6.5rem 1.5rem 4rem;
+  border-bottom: 10px solid #073b64;
+  background: #fff8f0;
+}
+.expert-laundry-section__inner {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+.expert-laundry-section h2 {
+  margin: 0 0 3.2rem;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.3em;
+  text-align: center;
+}
+.expert-laundry-section--shoe-cleaning h2 {
+  margin-top: .75em;
+  text-align: center;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-transform: uppercase;
+}
+.expert-laundry-section--carpet-cleaning h2 {
+  margin-top: .75em;
+  text-align: center;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-transform: uppercase;
+}
+.expert-laundry-section--curtain-cleaning h2 {
+  margin-top: .75em;
+  text-align: center;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-transform: uppercase;
+}
+.expert-laundry-section__highlight {
+  color: #ffc52d;
+  white-space: nowrap;
+}
+.expert-laundry-section .expert-laundry-section__highlight:after {
+  bottom: -10px;
+  height: 8px;
+  border-bottom: 4px solid #073b64;
+  transform: scaleX(0) rotate(-2deg);
+  transform-origin: left center;
+  animation: none;
+}
+.expert-laundry-section .expert-laundry-section__highlight.is-drawing:after {
+  animation: hero-underline-draw 1.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.expert-laundry-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.expert-laundry-card {
+  padding: 32px;
+  border-radius: 12px;
+  background: #fff4e9;
+  box-shadow: 0 16px 35px rgba(8, 51, 93, 0.08);
+  text-align: left;
+}
+.expert-laundry-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.82;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.expert-laundry-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.expert-laundry-card p {
+  margin: 0;
+  color: #4d4d4d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.expert-laundry-card__more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 20px 16px;
+  background: #f1f1f1;
+  color: #001d3d;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  list-style: none;
+}
+.expert-laundry-card__more::-webkit-details-marker {
+  display: none;
+}
+.expert-laundry-card__more span {
+  color: #222;
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+.expert-laundry-card__details[open] .expert-laundry-card__more span {
+  transform: rotate(90deg);
+}
+.expert-laundry-card__expanded {
+  padding: 18px 16px 0;
+}
+.expert-laundry-section__button {
+  display: inline-flex;
+  min-width: 200px;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  border-radius: 999px;
+  background: #ffc52d;
+  color: #06192c;
+  font-size: 15px;
+  font-weight: 800;
+}
+.doorstep-laundry-section {
+  padding: 7.5rem 1.5rem 5rem;
+  border-bottom: 8px solid #b7e9e5;
+  background: #fff;
+}
+.doorstep-laundry-section__inner {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+.doorstep-laundry-section h2 {
+  max-width: 1360px;
+  margin: 0 auto 1.2rem;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.3em;
+  text-align: center;
+}
+.doorstep-laundry-section__highlight {
+  color: #ffc52d;
+  white-space: nowrap;
+}
+.doorstep-laundry-section .doorstep-laundry-section__highlight:after {
+  bottom: -10px;
+  height: 8px;
+  border-bottom: 4px solid #073b64;
+  transform: scaleX(0) rotate(-2deg);
+  transform-origin: left center;
+  animation: none;
+}
+.doorstep-laundry-section .doorstep-laundry-section__highlight.is-drawing:after {
+  animation: hero-underline-draw 1.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.doorstep-laundry-section__intro {
+  max-width: 1370px;
+  margin: 0 auto 3.2rem;
+  color: #2f4052;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.doorstep-laundry-section__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+}
+.doorstep-laundry-card {
+  min-height: 270px;
+  padding: 32px 28px;
+  border: 1px solid #f7d8d4;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(197, 40, 18, 0.14);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.doorstep-laundry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px #00000026;
+}
+.doorstep-laundry-card img {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  margin-bottom: 28px;
+}
+.doorstep-laundry-card h3 {
+  margin: 0 0 10px;
+  color: #08335d;
+  font-family: Poppins, sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.doorstep-laundry-card p {
+  margin: 0 auto;
+  color: #111827;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.doorstep-laundry-section__button {
+  display: inline-flex;
+  min-width: 210px;
+  min-height: 59px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48px;
+  border-radius: 999px;
+  background: #073b64;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+}
+.laundry-services-cta {
+  padding: 3.5rem 1.5rem;
+  border-bottom: 10px solid #08335d;
+  background: #f5f5db;
+  text-align: center;
+}
+.laundry-services-cta__inner {
+  width: min(100%, 970px);
+  margin: 0 auto;
+}
+.laundry-services-cta h2 {
+  margin: 0;
+  color: #0c0c0c;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.18;
+}
+.laundry-services-cta p {
+  max-width: 890px;
+  margin: 25px auto 24px;
+  color: #152338;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.laundry-services-cta__button {
+  display: inline-flex;
+  min-width: 192px;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #0d082f;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.laundry-services-cta__button:hover {
+  background: #08335d;
+  transform: translateY(-2px);
+}
+@media (max-width: 1050px) {
+  .laundry-hero__inner {
+    padding-inline: 7vw;
+  }
+  .laundry-hero h1 {
+    font-size: clamp(35px, 4.5vw, 52px);
+  }
+  .pickup-form__fields {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pickup-form__footer {
+    align-items: flex-end;
+  }
+  .pickup-form button {
+    min-width: 160px;
+  }
+  .laundry-trust-section__inner {
+    grid-template-columns: 1fr;
+  }
+  .laundry-trust-section__copy {
+    max-width: none;
+  }
+  .laundry-trust-section__visual img {
+    max-width: 620px;
+  }
+  .laundry-types-section__grid {
+    gap: 24px;
+  }
+  .laundry-type-card img {
+    width: 190px;
+    height: 190px;
+  }
+  .laundry-type-card__body {
+    min-height: 285px;
+    padding: 105px 24px 32px;
+  }
+  .expert-laundry-section__grid {
+    gap: 24px;
+  }
+  .expert-laundry-card {
+    padding: 24px;
+  }
+  .doorstep-laundry-section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .laundry-hero {
+    min-height: auto;
+  }
+  .laundry-hero__inner {
+    display: block;
+    min-height: 0;
+    padding: 54px 24px 45px;
+  }
+  .laundry-hero h1 {
+    font-size: 37px;
+  }
+  .laundry-hero__description {
+    margin-top: 22px;
+  }
+  .laundry-hero__actions {
+    gap: 12px;
+  }
+  .laundry-hero__primary,
+  .laundry-hero__secondary {
+    min-height: 47px;
+    padding: 10px 17px;
+    font-size: 13px;
+  }
+  .laundry-hero__visual {
+    min-height: 240px;
+    margin-top: 23px;
+  }
+  .laundry-hero__visual-circle {
+    width: 265px;
+  }
+  .laundry-hero__visual img {
+    width: 85%;
+    right: 4%;
+  }
+  .pickup-section {
+    margin-top: 0;
+    padding: 0 15px 45px;
+  }
+  .pickup-section__inner {
+    grid-template-columns: 1fr;
+    border-radius: 0 0 18px 18px;
+  }
+  .pickup-form {
+    padding: 25px 19px;
+  }
+  .pickup-form h2 {
+    font-size: 27px;
+  }
+  .pickup-form__fields {
+    grid-template-columns: 1fr;
+  }
+  .pickup-form__footer {
+    display: block;
+  }
+  .pickup-form button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .pickup-offer {
+    padding: 24px 20px;
+  }
+  .pickup-offer__icon {
+    flex-basis: 59px;
+    width: 59px;
+    height: 59px;
+    font-size: 29px;
+  }
+  .laundry-trust-section {
+    padding: 3.25rem 1.1rem;
+  }
+  .laundry-trust-section__inner {
+    gap: 31px;
+  }
+  .laundry-trust-section h2 {
+    margin-bottom: 24px;
+    font-size: 35px;
+  }
+  .laundry-trust-section p,
+  .laundry-trust-section li {
+    font-size: 14px;
+    line-height: 1.68;
+  }
+  .laundry-trust-section__button {
+    width: 100%;
+    max-width: 230px;
+  }
+  .laundry-types-section {
+    padding: 4.2rem 1rem 3.2rem;
+  }
+  .laundry-types-section h2 {
+    margin-bottom: 42px;
+    font-size: 34px;
+  }
+  .laundry-types-section__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .laundry-type-card {
+    padding-top: 86px;
+  }
+  .laundry-type-card img {
+    width: 170px;
+    height: 170px;
+  }
+  .laundry-type-card__body {
+    min-height: 0;
+    padding: 96px 22px 30px;
+  }
+  .laundry-type-card h3 {
+    font-size: 24px;
+  }
+  .laundry-type-card p {
+    font-size: 14px;
+  }
+  .expert-laundry-section {
+    padding: 4rem 1rem 3.2rem;
+  }
+  .expert-laundry-section h2 {
+    margin-bottom: 2.5rem;
+    font-size: 34px;
+  }
+  .expert-laundry-section__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .expert-laundry-card {
+    padding: 20px;
+  }
+  .expert-laundry-card h3 {
+    font-size: 22px;
+  }
+  .doorstep-laundry-section {
+    padding: 4.5rem 1rem 3.5rem;
+  }
+  .doorstep-laundry-section h2 {
+    font-size: 34px;
+  }
+  .doorstep-laundry-section__intro {
+    margin-bottom: 2.4rem;
+    font-size: 14px;
+  }
+  .doorstep-laundry-section__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .doorstep-laundry-card {
+    min-height: 0;
+    padding: 28px 20px;
+  }
+  .doorstep-laundry-card h3 {
+    font-size: 21px;
+  }
+  .doorstep-laundry-section__button {
+    width: 100%;
+    max-width: 240px;
+  }
+  .laundry-services-cta {
+    padding: 48px 20px 43px;
+  }
+  .laundry-services-cta p {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
