@@ -7611,10 +7611,19 @@ nav > a:hover {
 }
 
 /* Bootstrap responsive foundation and small-screen safeguards. */
-html,
-body {
+html {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Clip horizontal overflow on <body> without turning it into a scroll
+   container. `overflow-x: hidden` on <body> creates a nested scroll container
+   that silently breaks `position: sticky` for every descendant (which stopped
+   the services-page "How It Works" panel from pinning). `clip` keeps the same
+   clipping behaviour but leaves the viewport as the scroll container. */
+body {
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 img,
@@ -8094,43 +8103,39 @@ main [class*="__grid"] {
   }
 }
 
-/* Keep the Services process panel pinned until its five scroll steps finish. */
+/* Services process panel: pinned while the reader scrolls through the five
+   steps, then released into the next section. The panel (100vh) stays sticky
+   inside a taller section; the extra height is the scroll "runway" the user
+   scrolls through to advance the steps. Scrolling back up reverses the steps.
+   Travel = section height - panel height, measured in ServicesPage.jsx, so the
+   section ends exactly when the final step has been shown. */
 .services-page {
   overflow: visible;
 }
 
 .services-page .how-it-works {
-  height: 300vh;
-  min-height: 300vh;
+  height: calc(100vh + 260vh);
+  min-height: calc(100vh + 260vh);
+  padding: 0 24px;
   overflow: visible;
 }
 
 .services-page .how-it-works__container {
   position: sticky !important;
   top: 0;
-  min-height: 100vh;
   height: 100vh;
+  min-height: 100vh;
 }
 
 @media (min-width: 701px) {
   .services-page .how-it-works__container {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 2;
     display: grid !important;
+    z-index: 2;
   }
 }
 
 @media (max-width: 700px) {
-  .services-page .how-it-works {
-    height: 300vh;
-    min-height: 300vh;
-  }
-
   .services-page .how-it-works__container {
-    position: sticky !important;
-    top: 0;
-    height: 100vh;
     padding-top: 28px;
   }
 }
