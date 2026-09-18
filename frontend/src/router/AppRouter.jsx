@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AboutUsPage } from "../pages/AboutUsPage";
@@ -29,7 +30,7 @@ function ScrollToTop() {
 
 export function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ExcelCare">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
